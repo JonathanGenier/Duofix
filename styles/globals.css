@@ -1,0 +1,78 @@
+/* Extra small devices (portrait phones, 280px and up) */
+@media (min-width: 280px) {
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/*======================================================================
+      PAGE LAYOUT
+======================================================================*/
+
+/* Main Container */
+.main-c {
+  width: 100%;
+}
+
+/* Expanding Container */
+.exp-c {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Restricted container */
+.res-c {
+  display: flex;
+  width: 100%;
+  max-width: 1520px;
+  margin: auto;
+}
+
+/*======================================================================
+      FONTS
+======================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.std-ft-xs, .std-ft-sm, .std-ft-md, .std-ft-lg, .std-ft-xl, 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kanit', sans-serif;
+}
+
+.std-ft-xs {
+  font-size: 14px;
+}
+
+.std-ft-sm {
+  font-size: 16px;
+}
+
+.std-ft-md {
+  font-size: 18px;
+}
+
+.std-ft-lg {
+  font-size: 20px;
+}
+
+.std-ft-xl {
+  font-size: 22px;
+}

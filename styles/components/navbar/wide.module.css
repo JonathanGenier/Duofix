@@ -1,0 +1,90 @@
+/*======================================================================
+      CONTAINERS
+======================================================================*/
+.container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    -webkit-box-shadow: 0px -27px 50px 50px rgba(0,0,0,0.6); 
+    box-shadow: 0px -27px 50px 50px rgba(0,0,0,0.6);
+}
+
+.topContainer {
+    background-color: #6e1a00;
+    height: 30px;
+}
+
+.bottomContainer {
+    background-color: white;
+    height: 60px;
+    border-bottom: 1px solid black;
+}
+
+/*======================================================================
+      CONTENT
+======================================================================*/
+.topContent, .bottomContent {
+    padding: 0px 15px;
+}
+
+/*======================================================================
+      NAVBAR ITEMS
+======================================================================*/
+.logo {
+    margin: auto 30px auto 0px;
+    width: auto;
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+}
+
+.itemContainerLeft {
+    display: flex;
+    margin: auto 15px auto 0px;
+}
+
+.itemContainerRight{
+    display: flex;
+    margin: auto 0px auto auto;
+}
+
+.iconImage{
+    margin: auto 7px auto 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.topItemText, .languageItemText {
+    color: white;
+    text-decoration: none;
+}
+
+.bottomItemText {
+    margin: auto 15px auto 0px;
+}
+
+.quoteItemText {
+    font-weight: bold;
+    margin: auto 0px;
+}
+
+.bottomItemText, .quoteItemText {
+    color: #6e1a00;
+    text-decoration: none;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.bottomItemText:hover, .quoteItemText:hover {
+    border-bottom: 3px solid #c25c0e;
+}
+
+.bottomItemText:hover, .quoteItemText:hover, .languageItemText:hover {
+    cursor: pointer;
+    color: #c25c0e;
+}
