@@ -11,7 +11,7 @@ import styles from '../styles/pages/index.module.css'
 export default function products() {
   return (
     <Container fluid className={"Container"}>
-     <a>ALLO PAPA</a>
+     
     </Container>
   )
 }
