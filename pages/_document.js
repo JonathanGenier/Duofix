@@ -1,4 +1,9 @@
+/*==MODULES===================================================================*/
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+/*==COMPONENTS================================================================*/
+/*==STYLES====================================================================*/
+/*============================================================================*/
 
 class MyDocument extends Document {
   
@@ -10,7 +15,7 @@ class MyDocument extends Document {
   render() {
     let key = require('dotenv').config()
     let PLACES_AUTOCOMPLETE_API_KEY = process.env.PLACES_AUTOCOMPLETE_API_KEY
-    let placesUrl = "https://maps.googleapis.com/maps/api/js?key="+{PLACES_AUTOCOMPLETE_API_KEY}+"&libraries=places"
+    let placesUrl = "https://maps.googleapis.com/maps/api/js?key="+PLACES_AUTOCOMPLETE_API_KEY+"&libraries=places"
     
     return (
       <Html>
