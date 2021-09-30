@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    margin: auto 0px;
+}
+
+.input:checked:active {
+    background-color: red;
+}
+
+.text {
+    margin: auto 0px;
+    padding-left: 10px;
+}

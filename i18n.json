@@ -3,6 +3,7 @@
     "defaultLocale": "en-CA",
     "pages": {
         "*": ["common"],
-        "/about": ["about"]
+        "/about": ["about"],
+        "/quote": ["quote"]
     }
 }
