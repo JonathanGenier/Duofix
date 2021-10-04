@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-weight: bold;
+    color: #c25c0e;
+    z-index: 1;
+}
+
+.warning-true {
+    display: block;
+    color: red;
+}
+
+.warning-false {
+    display: none;
+}

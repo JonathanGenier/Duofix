@@ -1,38 +1,48 @@
 /*==MODULES===================================================================*/
-import { useState } from 'react'
-
-/*==COMPONENTS================================================================*/
-import { Container, Col, Row } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
 
+/*==COMPONENTS================================================================*/
+
 /*==STYLES====================================================================*/
+import styles from '../styles/components/addressInput.module.css'
 
 /*============================================================================*/
 
-export default function addressBar() {
+export default function addressInput({ onChangeFn }) {
 
-    const [address, setAddress] = useState("")
+    const [tempAddress, setTempAddress] = useState("")
 
-    const handleSelect = async value => {
-        const results = await geocodeByAddress(value)
-        console.log(results)
-        setAddress(results)
+    const searchOptions = {
+        componentRestrictions: {
+            country: 'ca',
+        },
+        types: ['address']
     }
+
+    // This function is called when onChange/onSelect on address is triggered
+    useEffect(() => {
+
+        onChangeFn(tempAddress)
+    },
+        [tempAddress])
 
     return (
         <PlacesAutocomplete
-            value={address}
-            onChange={setAddress}
-            onSelect={handleSelect}
+            value={tempAddress}
+            onChange={setTempAddress}
+            onSelect={setTempAddress}
+            searchOptions={searchOptions}
         >
             {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                 <div key={suggestions.description}>
 
                     <input
                         {...getInputProps({
-                            placeholder: 'Enter your address ...',
-                            className: 'location-search-input',
+                            placeholder: 'Search and select your address'
                         })}
+                        className={styles.textInput}
+                        type="text"
                     />
                     <div className="autocomplete-dropdown-container">
                         {loading && <div>Loading...</div>}
@@ -40,12 +50,13 @@ export default function addressBar() {
                             const className = suggestion.active
                                 ? 'suggestion-item--active'
                                 : 'suggestion-item';
-                            // inline style for demonstration purpose
                             const style = suggestion.active
-                                ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+                                ? { backgroundColor: '#c25c0e77', cursor: 'pointer' }
                                 : { backgroundColor: '#ffffff', cursor: 'pointer' };
                             return (
                                 <div
+                                    className={styles.dropdownContainer}
+                                    key={suggestions.indexOf(suggestion)}
                                     {...getSuggestionItemProps(suggestion, {
                                         className,
                                         style,

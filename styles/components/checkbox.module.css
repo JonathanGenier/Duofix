@@ -3,15 +3,49 @@
     flex-direction: row;
 }
 
-.input {
-    margin: auto 0px;
+.content {
+    display: flex;
 }
 
-.input:checked:active {
-    background-color: red;
+.content:hover {
+    cursor: pointer;
+}
+
+.content:hover .text {
+    color: #c25c0e;
+}
+
+.content:hover .checkbox {
+    border-color: #c25c0e;
+}
+
+.checkbox {
+    position: relative;
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    margin: auto 0;
+}
+
+.checkbox:focus {
+    outline: none;
+    border-color: #c25c0e;
+}
+
+.checkbox-true {
+    border-color: #c25c0e;
+}
+
+.checkmark {
+    position: absolute;
+    top: -4px;
+    left: 0px;
+    color: #c25c0e;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .text {
     margin: auto 0px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
