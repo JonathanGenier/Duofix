@@ -113,6 +113,55 @@
 /*======================================================================
       MENU BUTTON
 ======================================================================*/
+.menuBtn {
+    border-bottom: 1px solid #6e1a00;
+}   
+
+.menuBtn, .menuBtnPromo  {
+    display: flex;
+    height: 50px;
+    text-decoration: none;
+}
+
+.menuBtnPromo {
+    background: #6e1a00;
+    border: none;
+}
+
+.menuBtn:hover {
+    background: rgb(194,92,14);
+    background: linear-gradient(270deg, rgba(194,92,14,1) 0%, rgba(255,255,255,1) 80%); 
+}
+
+.menuBtnPromo:hover {
+    background: rgb(194,92,14);
+    background: linear-gradient(270deg, rgba(194,92,14,1) 0%, rgba(110,26,0,1) 80%); 
+}
+
+.menuBtn:hover .menuBtnText{
+    color: #c25c0e;
+    font-weight: bold;
+}
+
+.menuBtnText {
+    margin: auto 15px;
+    text-align: center;
+    color: #6e1a00;
+}
+
+.menuBtnPromoText {
+    margin: auto 15px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+
+
+
+
 .menu-btn{
     display: flex;
     height: 50px;

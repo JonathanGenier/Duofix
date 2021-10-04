@@ -67,28 +67,28 @@ export default function mobileNavbar() {
                             {languageToggler()}
                         </div>
                         <div className={styles.menuMiddleContainer}>
-
-                            <div className={styles["menu-btn"]}>
-                                <span className={"std-ft-md " + styles["menu-btn-t"]}>{t('common:home')}</span>
-                            </div>
-                            <div className={styles["menu-btn"]}>
-                                <span className={"std-ft-md " + styles["menu-btn-t"]}>{t('common:about')}</span>
-                            </div>
-                            <div className={styles["menu-btn"]}>
-                                <span className={"std-ft-md " + styles["menu-btn-t"]}>{t('common:products')}</span>
-                            </div>
-                            <div className={styles["menu-btn"]}>
-                                <span className={"std-ft-md " + styles["menu-btn-t"]}>{t('common:gallery')}</span>
-                            </div>
-                            <div className={styles["menu-btn"]}>
-                                <span className={"std-ft-md " + styles["menu-btn-t"]}>{t('common:contact')}</span>
-                            </div>
+                            <a className={styles.menuBtn} href={"/"}>
+                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:home')}</span>
+                            </a>
+                            <a className={styles.menuBtn}>
+                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:about')}</span>
+                            </a>
+                            <a className={styles.menuBtn}>
+                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:products')}</span>
+                            </a>
+                            <a className={styles.menuBtn}>
+                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:gallery')}</span>
+                            </a>
+                            <a className={styles.menuBtn}>
+                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:contact')}</span>
+                            </a>
+                            <a className={styles.menuBtnPromo} href={"/quote"}>
+                                <span className={"std-ft-md " + styles.menuBtnPromoText}>{t('common:quote')}</span>
+                            </a>
                         </div>
 
                         <div className={styles.menuBottomContainer}>
-                            <div className={styles["menu-btn-d"]}>
-                                <span className={"std-ft-lg " + styles["menu-btn-d-t-b"]}>{t('common:quote')}</span>
-                            </div>
+                            
                         </div>
                     </div>
                 </>
