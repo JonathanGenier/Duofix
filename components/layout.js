@@ -39,13 +39,16 @@ export default function layout({ children }) {
         <div className={"main-container"}>
             <div className={"main-container"} >
 
-                <div className={styles.navBar}>
-                    {renderNavbar()}
-                </div>
+                {/* Pages */}
                 <div className={styles.children}>
                     {children}
                 </div>
-                
+
+                {/* Navbar */}
+                <div className={styles.navBar}>
+                    {renderNavbar()}
+                </div>]
+
                 {/*<Footer/>*/}
             </div>
         </div>
