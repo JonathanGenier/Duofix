@@ -1,6 +1,6 @@
 /*==MODULES===================================================================*/
 import { useState, useEffect } from 'react'
-import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+import PlacesAutocomplete from 'react-places-autocomplete'
 
 /*==COMPONENTS================================================================*/
 
@@ -13,6 +13,7 @@ export default function addressInput({ onChangeFn }) {
 
     const [tempAddress, setTempAddress] = useState("")
 
+    // Restricts address search to Canada only.
     const searchOptions = {
         componentRestrictions: {
             country: 'ca',

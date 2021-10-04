@@ -12,6 +12,7 @@ export default function checkbox({ value, text, callbackFn }) {
 
     const [checked, setChecked] = useState(false)
 
+    // Updates the parent's when this checkbox changes. 
     useEffect(() => {
         callbackFn({ value, state: checked })
     },

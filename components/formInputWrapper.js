@@ -1,14 +1,20 @@
 /*==MODULES===================================================================*/
-
 /*==COMPONENTS================================================================*/
-
 /*==STYLES====================================================================*/
 import styles from '../styles/components/formInput.module.css'
 
 /*============================================================================*/
 
-export default function formInput({ title, component, warningStates, warningMessages }) {
+export default function formInputWrapper({ title, component, warningStates, warningMessages }) {
 
+    // Title: Title of the input
+    // component: inputs (text, checkboxes, numbers, etc.)
+    // warningStates: Array of true or false
+    // warningMessages: Array of warning messages
+
+    // Render warning messages when the user's input are not valid.
+    // Can have multiple warning messages displayed at the same time.
+    // The amount of warningStates should be equal to the amount of warningMessages.
     const renderWarnings = () => {
         let stateCount = warningStates.length
         let messageCount = warningMessages.length
@@ -37,7 +43,6 @@ export default function formInput({ title, component, warningStates, warningMess
             <label className={styles.title}>{title}</label>
             {renderWarnings()}
             {component}
-            {/* {<input id={inputId} type="text" placeholder={placeholder} onChange={onChangeFn} defaultValue={defaultValue}></input>} */}
         </div>
     )
 }
