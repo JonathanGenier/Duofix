@@ -38,8 +38,14 @@ export default function layout({ children }) {
     return (
         <div className={"main-container"}>
             <div className={"main-container"} >
-                {renderNavbar()}
-                {children}
+
+                <div className={styles.navBar}>
+                    {renderNavbar()}
+                </div>
+                <div className={styles.children}>
+                    {children}
+                </div>
+                
                 {/*<Footer/>*/}
             </div>
         </div>

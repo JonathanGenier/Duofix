@@ -1,0 +1,9 @@
+.navbar {
+    position: relative;
+    z-index: 1;
+}
+
+.children {
+    position: relative;
+    z-index: -1;
+}

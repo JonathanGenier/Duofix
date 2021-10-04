@@ -3,6 +3,7 @@
 ======================================================================*/
 
 .formContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -59,7 +60,6 @@
 }
 
 .textInput {
-    z-index: 0;
     border-radius: 5px;
     border: 1px solid black;
 }
