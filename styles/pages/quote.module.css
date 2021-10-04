@@ -1,18 +1,27 @@
+/* Extra small devices (portrait phones, 360px and lower) */
+@media (max-width: 360px) {
+    .restrictedContainer {
+        padding: 50px 0px;
+    }
+}
+
+/* Extra small devices (portrait phones, 361px and up) */
+@media (min-width: 361px) {
+    .restrictedContainer {
+        padding: 50px 20px;
+    }
+}
+
 /*======================================================================
       CONTAINERS
 ======================================================================*/
 .container {
     width: 100vw;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 90px); /* 90px = thickness of the navbar */
     background-color: #6e1a00;
-}
-
-.expandlableContainer {
-    
 }
 
 .restrictedContainer {
     display: flex;
-    padding: 50px 20px;
-    height: 100%;
+    height: calc(100vh - 90px); /* 90px = thickness of the navbar */
 }

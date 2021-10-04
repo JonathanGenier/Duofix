@@ -16,6 +16,7 @@ export default function customerDataForm({ backFn, nextFn }) {
 
     const [tempAddress, setTempAddress] = useState("")
 
+    // Stores all the customer's information
     const [customerData, setCustomerData] = useState({
         fullName: "",
         phone: "",
@@ -28,6 +29,7 @@ export default function customerDataForm({ backFn, nextFn }) {
         preferedLanguage: []
     })
 
+    // Warning states (true or false). If true, we display a warning message for the assigned input.
     const [warnings, setWarnings] = useState({
         fullName: false,
         phone: false,
@@ -39,10 +41,10 @@ export default function customerDataForm({ backFn, nextFn }) {
         preferedLanguage: false
     })
 
-    // This function is called when onChange/onSelect on address is triggered
+    // Called when tempAddress is modified.
     useEffect(() => {
 
-        // Reset warnings when 
+        // Reset warnings when modified
         if (tempAddress) {
             setWarnings({ ...warnings, address: false, addressFormat: false })
         } else {
@@ -64,13 +66,19 @@ export default function customerDataForm({ backFn, nextFn }) {
     },
         [customerData])
 
+    // Saves everything the user's entered and we go back into
+    // the previous step of the quote application form.
+    // Called by the back button
     const back = () => {
-        // Save data
+
+        // Saves data
         backFn()
     }
 
     // Validate entries and fetch the full address from geocode.
-    // If all the data is valid, we proceed onto the next step.
+    // If all the data is valid, we proceed onto the next step of
+    // the quote application form.
+    // Called by the next button
     const next = async () => {
 
         if (!validateEntries())
@@ -79,43 +87,12 @@ export default function customerDataForm({ backFn, nextFn }) {
         await getFullAddress()
     }
 
-    // Handles onChange of every input exept for the address.
-    const handleOnChange = e => {
-        const { id, value } = e.target
-
-        // Resets warnings when the user is typing
-        if (value && warnings[id])
-            setWarnings({ ...warnings, [id]: false })
-
-        setCustomerData({ ...customerData, [id]: value })
-    }
-
-    // This function is a callback for checkbox components. It adds 
-    // or remove selected languages to customerData.preferedLanguage 
-    // array based on the checkboxes values.
-    const handleCheckBox = ({ value, state }) => {
-        let preferedLanguage = customerData.preferedLanguage
-        let index = preferedLanguage.indexOf(value)
-
-        // Resets warnings when the user has selected a language
-        if (value && warnings.preferedLanguage)
-            setWarnings({ ...warnings, preferedLanguage: false })
-
-        // Adds language
-        if (index == -1 && state) {
-            preferedLanguage.push(value)
-        }
-
-        // Removes Language
-        if (index != -1 && !state) {
-            preferedLanguage.splice(index, 1)
-        }
-
-        setCustomerData({ ...customerData, preferedLanguage })
-    }
-
-    // Gets the full address from geocode.
+    // Gets the full address from geocode API.
     const getFullAddress = async () => {
+
+        // At this point, tempAddress is always going to be in the following
+        // format: civic number street, city, province, canada. We validate 
+        // that format in the validateEntries(). 
         const fullAddress = await geocodeByAddress(tempAddress)
         let components = fullAddress[0].address_components
 
@@ -151,8 +128,43 @@ export default function customerDataForm({ backFn, nextFn }) {
 
         setWarnings({ ...warnings, fullName, phone, email, address, phoneFormat, emailFormat, addressFormat, preferedLanguage })
 
-        // Return true if every entries are valid.
+        // Returns true if every entries are valid.
         return (!fullName && !phone && !email && !address && !phoneFormat && !emailFormat && !addressFormat && !preferedLanguage)
+    }
+
+    // Handles onChange of every input except for the address.
+    const handleOnChange = e => {
+        const { id, value } = e.target
+
+        // Resets warnings when the user is typing
+        if (value && warnings[id])
+            setWarnings({ ...warnings, [id]: false })
+
+        setCustomerData({ ...customerData, [id]: value })
+    }
+
+    // This function is a callback for checkbox components. It adds 
+    // or remove selected languages to customerData.preferedLanguage 
+    // array based on the checkboxes values.
+    const handleCheckBox = ({ value, state }) => {
+        let preferedLanguage = customerData.preferedLanguage
+        let index = preferedLanguage.indexOf(value)
+
+        // Resets warnings when the user has selected a language
+        if (value && warnings.preferedLanguage)
+            setWarnings({ ...warnings, preferedLanguage: false })
+
+        // Adds language
+        if (index == -1 && state) {
+            preferedLanguage.push(value)
+        }
+
+        // Removes Language
+        if (index != -1 && !state) {
+            preferedLanguage.splice(index, 1)
+        }
+
+        setCustomerData({ ...customerData, preferedLanguage })
     }
 
     return (
