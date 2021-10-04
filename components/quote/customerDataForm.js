@@ -1,6 +1,6 @@
 /*==MODULES===================================================================*/
 import { useState, useEffect } from 'react'
-import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+import { geocodeByAddress } from 'react-places-autocomplete'
 
 /*==COMPONENTS================================================================*/
 import Checkbox from '../checkbox'
@@ -218,6 +218,7 @@ export default function customerDataForm({ backFn, nextFn }) {
                 warningMessages={["Choose at least one language"]}
             />
 
+            {/* Navigation Buttons */}
             <hr />
             <div className={styles.navBtnsContainer}>
                 <button className={styles.navBtn} onClick={back}>Back</button>
