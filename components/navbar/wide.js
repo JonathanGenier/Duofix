@@ -20,7 +20,7 @@ export default function desktopNavbar() {
         switch (router.locale) {
             case "fr-CA": return (
                 <Link href={router.asPath} locale={'en-CA'}>
-                    <a className={styles.languageItemText+ " std-ft-sm "}>English</a>
+                    <a className={styles.languageItemText + " std-ft-sm "}>English</a>
                 </Link>
             )
             default: return (
@@ -59,18 +59,30 @@ export default function desktopNavbar() {
 
             <div className={"exp-c " + styles.bottomContainer}>
                 <div className={"res-c " + styles.bottomContent}>
-                    <img className={styles.logo} src='/images/navbar_logo.png' onClick={() => {router.push("/")}}></img>
+                    <img className={styles.logo} src='/images/navbar_logo.png' onClick={() => { router.push("/") }}></img>
                     <div className={styles.navbar}>
                         <div className={styles.itemContainerLeft}>
-                            <a className={styles.bottomItemText + " std-ft-md"} href="/">{t('common:home')}</a>
-                            <a className={styles.bottomItemText + " std-ft-md"} href="/about">{t('common:about')}</a>
-                            <a className={styles.bottomItemText + " std-ft-md"} href="/products">{t('common:products')}</a>
-                            <a className={styles.bottomItemText + " std-ft-md"} href="/gallery">{t('common:gallery')}</a>
-                            <a className={styles.bottomItemText + " std-ft-md"} href="/contact">{t('common:contact')}</a>
+                            <Link href={router.locale + "/"}>
+                                <a className={styles.bottomItemText + " std-ft-md"} href="/">{t('common:home')}</a>
+                            </Link>
+                            <Link href={router.locale + "/about"}>
+                                <a className={styles.bottomItemText + " std-ft-md"} href="/about">{t('common:about')}</a>
+                            </Link>
+                            <Link href={router.locale + "/products"}>
+                                <a className={styles.bottomItemText + " std-ft-md"} href="/products">{t('common:products')}</a>
+                            </Link>
+                            <Link href={router.locale + "/gallery"}>
+                                <a className={styles.bottomItemText + " std-ft-md"} href="/gallery">{t('common:gallery')}</a>
+                            </Link>
+                            <Link href={router.locale + "/contact"}>
+                                <a className={styles.bottomItemText + " std-ft-md"} href="/contact">{t('common:contact')}</a>
+                            </Link>
                         </div>
 
                         <div className={styles.itemContainerRight}>
-                            <a className={styles.quoteItemText + " std-ft-lg "} href="/quote">{t('common:quote')}</a>
+                            <Link href={router.locale + "/quote"}>
+                                <a className={styles.quoteItemText + " std-ft-lg "} >{t('common:quote')}</a>
+                            </Link>
                         </div>
                     </div>
                 </div>

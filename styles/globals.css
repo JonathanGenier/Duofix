@@ -23,19 +23,26 @@
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
 /*======================================================================
       PAGE LAYOUT
 ======================================================================*/
 
+html * { 
+  font-family: 'Kanit', sans-serif !important;
+}
+
 /* Main Container */
 .main-c {
   width: 100%;
+  height: 100%;
 }
 
 /* Expanding Container */
 .exp-c {
   display: flex;
-  flex-direction: column;
+  width: 100vw;
 }
 
 /* Restricted container */
@@ -50,12 +57,12 @@
       FONTS
 ======================================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
-.std-ft-xs, .std-ft-sm, .std-ft-md, .std-ft-lg, .std-ft-xl, 
+
+/* .std-ft-xs, .std-ft-sm, .std-ft-md, .std-ft-lg, .std-ft-xl, 
 h1, h2, h3, h4, h5, h6, label, span, input[type="text"] {
   font-family: 'Kanit', sans-serif;
-}
+} */
 
 .std-ft-xs {
   font-size: 14px;

@@ -67,28 +67,40 @@ export default function mobileNavbar() {
                             {languageToggler()}
                         </div>
                         <div className={styles.menuMiddleContainer}>
-                            <a className={styles.menuBtn} href={"/"}>
-                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:home')}</span>
-                            </a>
-                            <a className={styles.menuBtn}>
-                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:about')}</span>
-                            </a>
-                            <a className={styles.menuBtn}>
-                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:products')}</span>
-                            </a>
-                            <a className={styles.menuBtn}>
-                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:gallery')}</span>
-                            </a>
-                            <a className={styles.menuBtn}>
-                                <span className={"std-ft-md " + styles.menuBtnText}>{t('common:contact')}</span>
-                            </a>
-                            <a className={styles.menuBtnPromo} href={"/quote"}>
-                                <span className={"std-ft-md " + styles.menuBtnPromoText}>{t('common:quote')}</span>
-                            </a>
+                            <Link href={router.locale + "/"}>
+                                <a className={styles.menuBtn}>
+                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:home')}</span>
+                                </a>
+                            </Link>
+                            <Link href={router.locale + "/about"}>
+                                <a className={styles.menuBtn}>
+                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:about')}</span>
+                                </a>
+                            </Link>
+                            <Link href={router.locale + "/products"}>
+                                <a className={styles.menuBtn}>
+                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:products')}</span>
+                                </a>
+                            </Link>
+                            <Link href={router.locale + "/gallery"}>
+                                <a className={styles.menuBtn}>
+                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:gallery')}</span>
+                                </a>
+                            </Link>
+                            <Link href={router.locale + "/contact"}>
+                                <a className={styles.menuBtn}>
+                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:contact')}</span>
+                                </a>
+                            </Link>
+                            <Link href={router.locale + "/quote"}>
+                                <a className={styles.menuBtnPromo}>
+                                    <span className={"std-ft-md " + styles.menuBtnPromoText}>{t('common:quote')}</span>
+                                </a>
+                            </Link>
                         </div>
 
                         <div className={styles.menuBottomContainer}>
-                            
+
                         </div>
                     </div>
                 </>

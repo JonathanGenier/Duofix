@@ -44,9 +44,9 @@ export default function products() {
 
     const handleSetAddress = (fullAddress) => {
         setForm({
-            ...form, 
-            address: fullAddress.address, 
-            district: fullAddress.district, 
+            ...form,
+            address: fullAddress.address,
+            district: fullAddress.district,
             city: fullAddress.city,
             province: fullAddress.province,
             postalCode: fullAddress.postalCode
@@ -55,16 +55,14 @@ export default function products() {
 
     const renderSteps = () => {
         switch (step) {
-            case 1: return (<CustomerDataForm backFn={back} nextFn={handleCustomerDataForm}/>);
+            case 1: return (<CustomerDataForm backFn={back} nextFn={handleCustomerDataForm} />);
         }
     }
 
     return (
-        <div className={"main-c " + styles.container}>
-            <div className={"exp-c " + styles.expandlableContainer}>
-                <div className={"res-c " + styles.restrictedContainer}>
-                    {renderSteps()}
-                </div>
+        <div className={"exp-c " + styles.container}>
+            <div className={"res-c " + styles.restrictedContainer}>
+                {renderSteps()}
             </div>
         </div>
     )

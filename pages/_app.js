@@ -17,7 +17,6 @@ function duoFix({ Component, pageProps }) {
         <meta name="Duofix" content="We fix it right!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Component {...pageProps} />
     </Layout>
   )

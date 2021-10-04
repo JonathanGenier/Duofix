@@ -29,28 +29,31 @@ export default function layout({ children }) {
     const renderNavbar = () => {
 
         if (viewport.width < 992) {
-            return (<CompactNavbar/>)
+            return (<CompactNavbar />)
         }
 
         return (<WideNavbar />)
     }
 
     return (
-        <div className={"main-container"}>
-            <div className={"main-container"} >
+        <div className={"main-c"}>
+            {/* Navbar */}
+            {renderNavbar()}
 
-                {/* Pages */}
-                <div className={styles.children}>
-                    {children}
-                </div>
-
-                {/* Navbar */}
-                <div className={styles.navBar}>
-                    {renderNavbar()}
-                </div>]
-
-                {/*<Footer/>*/}
+            {/* Pages */}
+            {children}
+            
+            {/*<Footer/>*/}
+            {/* Must be rendered after pages */}
+            
+            {/* <div className={styles.navBar}>
+                
             </div>
+
+            
+            <div className={styles.children}>
+
+            </div> */}
         </div>
     )
 }

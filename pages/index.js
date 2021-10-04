@@ -16,15 +16,18 @@ export default function index() {
     <div className={"main-c " + styles.container}>
       <div className={"exp-c " + styles.topContainer}>
         <div className={"res-c " + styles.topContent}>
-          <div className={styles.logoContent}>
-            <img className={styles.logo} src='/images/logo_01.png'></img>
-            <h3 className={styles.experienceAd}>{t("common:experienceAd")}</h3>
-          </div>
+          <h1>Website currently in construction</h1>
+          {
+            // <div className={styles.logoContent}>
+            //   <img className={styles.logo} src='/images/logo_01.png'></img>
+            //   <h3 className={styles.experienceAd}>{t("common:experienceAd")}</h3>
+            // </div>
+          }
         </div>
       </div>
       <div className={"exp-c " + styles.middleContainer}>
         <div className={"res-c " + styles.middleContent}>
-          
+          <h1>Website currently in construction</h1>
         </div>
       </div>
     </div>

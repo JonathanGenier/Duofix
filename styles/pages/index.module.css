@@ -1,53 +1,11 @@
 .container {
-    height: auto;
-    background-color: green;
+    width: 100vw;
+    height: 100%;
+    background-color: #6e1a00;
 }
 
-
-.content {
-    
-}
-
-.topImage {
-    
-}
-
-.topContainer {
-    width: 100%;
-    height: 700px;
-    background-image: url('/images/bg_02.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.middleContainer {
-    background-color: green;
-}
-
-.middleContent {
+.restrictedContainer {
     display: flex;
-    flex-direction: column;
-    background-color: red;
-}
-
-.topContent {
-    
-}
-
-.logo {
-    width: auto;
-    height: 350px;
-    margin: auto;
-}
-
-.logoContent {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    text-align: center;
-}
-
-.experienceAd {
-    color: white;
-    font-weight: bold;
+    height: calc(100vh - 90px); /* 90px = thickness of the navbar */
+    background-color: green;
 }
