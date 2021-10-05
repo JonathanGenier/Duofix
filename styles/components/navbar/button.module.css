@@ -1,0 +1,77 @@
+/*======================================================================
+      COMPACT BUTTON
+======================================================================*/
+.button-compact {
+    border-bottom: 1px solid #6e1a00;
+    height: 51px;
+}
+
+.button-compact-promo {
+    border-bottom: 10px solid #6e1a00;
+    height: 60px;
+}
+
+.button-compact, .button-compact-promo {
+    background: white;
+    background: linear-gradient(270deg, rgba(110,26,0,1) 0%, rgba(255,255,255,1) 80%); 
+    display: flex;
+    text-decoration: none;
+}
+
+.button-compact:hover, .button-compact-promo:hover {
+    background: rgb(194,92,14);
+    background: linear-gradient(270deg, rgba(194,92,14,1) 0%, rgba(255,255,255,1) 80%); 
+}
+
+.button-compact:hover .text-compact {
+    font-weight: bold;
+}
+
+.button-compact:hover .text-compact,
+.button-compact-promo:hover .text-compact-promo {
+    color: #c25c0e;
+    font-style: italic;
+}
+
+.text-compact-promo {
+    font-weight: bold;
+}
+
+.text-compact, .text-compact-promo {
+    margin: auto 15px;
+    text-align: center;
+    color: #6e1a00;
+}
+
+/*======================================================================
+      WIDE BUTTON
+======================================================================*/
+
+.button-wide {
+    margin: auto 15px auto 0px;
+}
+
+.button-wide-promo {
+    margin: auto 0px;
+}
+
+.button-wide, .button-wide-promo {
+    text-decoration: none;
+}
+
+.button-wide:hover, .button-wide-promo:hover {
+    border-bottom: 3px solid #c25c0e;
+}
+
+.button-wide:hover .text-wide, 
+.button-wide-promo:hover .text-wide-promo {
+    color: #c25c0e;
+}
+
+.text-wide, .text-wide-promo {
+    color: #6e1a00;
+}
+
+.text-wide-promo {
+    font-weight: bold;
+}

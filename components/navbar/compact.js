@@ -6,24 +6,19 @@ import { useState } from 'react'
 
 /*==COMPONENTS================================================================*/
 import Info from '../../duofix.json'
+import NavButton from './navButton'
 
 /*==STYLES====================================================================*/
 import styles from '../../styles/components/navbar/compact.module.css'
 
 /*============================================================================*/
 
-export default function mobileNavbar() {
+export default function compactNavbar() {
 
     let router = useRouter()
     let { t } = useTranslation()
 
-    const [menu, setMenu] = useState({
-        opened: false
-    });
-    
-    const handleOnClick = () => {
-        setMenu({...menu, opened: false})
-    }
+    const [menu, setMenu] = useState(false);
 
     const languageToggler = () => {
         switch (router.locale) {
@@ -47,7 +42,7 @@ export default function mobileNavbar() {
     }
 
     const renderMenu = () => {
-        if (menu.opened) {
+        if (menu) {
             return (
                 <>
                     <div className={styles.menuBackground} />
@@ -71,36 +66,12 @@ export default function mobileNavbar() {
                             {languageToggler()}
                         </div>
                         <div className={styles.menuMiddleContainer}>
-                            <Link href={router.locale + "/"}>
-                                <a className={styles.menuBtn} onClick={handleOnClick}>
-                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:home')}</span>
-                                </a>
-                            </Link>
-                            <Link href={router.locale + "/about"} onClick={handleOnClick}>
-                                <a className={styles.menuBtn}>
-                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:about')}</span>
-                                </a>
-                            </Link>
-                            <Link href={router.locale + "/products"}>
-                                <a className={styles.menuBtn} onClick={handleOnClick}>
-                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:products')}</span>
-                                </a>
-                            </Link>
-                            <Link href={router.locale + "/gallery"}>
-                                <a className={styles.menuBtn} onClick={handleOnClick}>
-                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:gallery')}</span>
-                                </a>
-                            </Link>
-                            <Link href={router.locale + "/contact"}>
-                                <a className={styles.menuBtn} onClick={handleOnClick}>
-                                    <span className={"std-ft-md " + styles.menuBtnText}>{t('common:contact')}</span>
-                                </a>
-                            </Link>
-                            <Link href={router.locale + "/quote"}>
-                                <a className={styles.menuBtnPromo} onClick={handleOnClick}>
-                                    <span className={"std-ft-md " + styles.menuBtnPromoText}>{t('common:quote')}</span>
-                                </a>
-                            </Link>
+                            <NavButton text={t('common:quote')} type="compact" promo={true} route="quote" onClickCallBackFn={() => setMenu(false)}/>
+                            <NavButton text={t('common:home')} type="compact" onClickCallBackFn={() => setMenu(false)} />
+                            <NavButton text={t('common:about')} type="compact" route="about" onClickCallBackFn={() => setMenu(false)}/>
+                            <NavButton text={t('common:products')} type="compact" route="products" onClickCallBackFn={() => setMenu(false)}/>
+                            <NavButton text={t('common:gallery')} type="compact" route="gallery" onClickCallBackFn={() => setMenu(false)}/>
+                            <NavButton text={t('common:contact')} type="compact" route="contact" onClickCallBackFn={() => setMenu(false)}/>
                         </div>
 
                         <div className={styles.menuBottomContainer}>
@@ -116,8 +87,15 @@ export default function mobileNavbar() {
         <div className={"main-c " + styles.container}>
             <div className={"exp-c " + styles.topContainer}>
                 <div className={"res-c " + styles.topContent}>
-                    <img className={styles.logo} src='/images/navbar_logo.png'></img>
-                    <div onClick={() => setMenu({ ...menu, opened: !menu.opened })} className={styles["menu-tgl-btn-" + menu.opened]} />
+                    <div className={styles.logoContainer}>
+                        <Link href={"/" + router.locale + "/"}>
+                            <a>
+                                <img className={styles.logo} src='/images/navbar_logo.png'></img>
+                            </a>
+                        </Link>
+                    </div>
+
+                    <div onClick={() => setMenu(!menu)} className={styles["menu-tgl-btn-" + menu]} />
                 </div>
             </div>
 

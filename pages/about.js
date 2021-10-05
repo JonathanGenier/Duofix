@@ -7,7 +7,7 @@ import styles from '../styles/pages/index.module.css'
 
 /*============================================================================*/
 
-export default function products() {
+export default function about() {
   return (
     <div>
         

@@ -5,13 +5,14 @@ import { useRouter } from 'next/dist/client/router'
 
 /*==COMPONENTS================================================================*/
 import Info from '../../duofix.json'
+import NavButton from './navButton'
 
 /*==STYLES====================================================================*/
 import styles from '../../styles/components/navbar/wide.module.css'
 
 /*============================================================================*/
 
-export default function desktopNavbar() {
+export default function wideNavbar() {
 
     let router = useRouter()
     let { t } = useTranslation()
@@ -59,30 +60,23 @@ export default function desktopNavbar() {
 
             <div className={"exp-c " + styles.bottomContainer}>
                 <div className={"res-c " + styles.bottomContent}>
-                    <img className={styles.logo} src='/images/navbar_logo.png' onClick={() => { router.push("/") }}></img>
+                    <Link href={router.locale + "/"}>
+                        <a>
+                            <img className={styles.logo} src='/images/navbar_logo.png' onClick={() => { router.push("/") }}></img>
+                        </a>
+                    </Link>
+
                     <div className={styles.navbar}>
                         <div className={styles.itemContainerLeft}>
-                            <Link href={router.locale + "/"}>
-                                <a className={styles.bottomItemText + " std-ft-md"} href="/">{t('common:home')}</a>
-                            </Link>
-                            <Link href={router.locale + "/about"}>
-                                <a className={styles.bottomItemText + " std-ft-md"} href="/about">{t('common:about')}</a>
-                            </Link>
-                            <Link href={router.locale + "/products"}>
-                                <a className={styles.bottomItemText + " std-ft-md"} href="/products">{t('common:products')}</a>
-                            </Link>
-                            <Link href={router.locale + "/gallery"}>
-                                <a className={styles.bottomItemText + " std-ft-md"} href="/gallery">{t('common:gallery')}</a>
-                            </Link>
-                            <Link href={router.locale + "/contact"}>
-                                <a className={styles.bottomItemText + " std-ft-md"} href="/contact">{t('common:contact')}</a>
-                            </Link>
+                            <NavButton text={t('common:home')} type="wide" />
+                            <NavButton text={t('common:about')} type="wide" route="about" />
+                            <NavButton text={t('common:products')} type="wide" route="products" />
+                            <NavButton text={t('common:gallery')} type="wide" route="gallery" />
+                            <NavButton text={t('common:contact')} type="wide" route="contact" />
                         </div>
 
                         <div className={styles.itemContainerRight}>
-                            <Link href={router.locale + "/quote"}>
-                                <a className={styles.quoteItemText + " std-ft-lg "} >{t('common:quote')}</a>
-                            </Link>
+                            <NavButton text={t('common:quote')} type="wide" promo={true} route="quote" font="std-ft-lg" />
                         </div>
                     </div>
                 </div>
