@@ -1,6 +1,7 @@
 /*==MODULES===================================================================*/
 import { useState, useEffect } from 'react'
 import { geocodeByAddress } from 'react-places-autocomplete'
+import useTranslation from 'next-translate/useTranslation'
 
 /*==COMPONENTS================================================================*/
 import Checkbox from '../checkbox'
@@ -13,6 +14,8 @@ import styles from '../../styles/components/quote/customerDataForm.module.css'
 /*============================================================================*/
 
 export default function customerDataForm({ backFn, nextFn }) {
+
+    let { t } = useTranslation('quote')
 
     const [tempAddress, setTempAddress] = useState("")
 
@@ -167,24 +170,29 @@ export default function customerDataForm({ backFn, nextFn }) {
         setCustomerData({ ...customerData, preferedLanguage })
     }
 
+    const getWarnings = (id) => {
+    } 
+
     return (
         <div className={styles.formContainer}>
-            <h1>Your information</h1>
+            <h1>{t('h1Title')}</h1>
             <hr />
 
             {/* Full Name */}
             <FormInputWrapper
-                title="Full name"
+                title={t('fullName')}
+                id="Full name"
                 component={
                     <input id="fullName" type="text" className={styles.textInput} onChange={handleOnChange} defaultValue={customerData.fullName}></input>
                 }
                 warningStates={[warnings.fullName]}
-                warningMessages={["Enter your full name"]}
+                warningMessages={[t('quote:fullNameWarnings')]}
             />
 
             {/* Phone */}
             <FormInputWrapper
-                title="Phone number"
+                title={t('phone')}
+                id="Phone"
                 component={
                     <input id="phone" type="phone" className={styles.textInput} onChange={handleOnChange} defaultValue={customerData.phone}></input>
                 }
@@ -193,48 +201,51 @@ export default function customerDataForm({ backFn, nextFn }) {
                 defaultValue={customerData.phone}
                 warningCount={2}
                 warningStates={[warnings.phone, warnings.phoneFormat]}
-                warningMessages={["Enter your phone number", "Wrong or invalid phone number. Please correct it and try again."]}
+                warningMessages={t("phoneWarnings", null, {returnObjects: true})}
             />
 
             {/* Email */}
             <FormInputWrapper
-                title="Email address"
+                title={t('email')}
+                id="Email"
                 component={
                     <input id="email" type="text" className={styles.textInput} onChange={handleOnChange} defaultValue={customerData.email}></input>
                 }
                 warningStates={[warnings.email, warnings.emailFormat]}
-                warningMessages={["Enter your email address", "Wrong or invalid email address. Please correct it and try again."]}
+                warningMessages={t("emailWarnings", null, {returnObjects: true})}
             />
 
             {/* Address */}
             <FormInputWrapper
-                title="Address"
+                title={t('address')}
+                id="Address"
                 component={
                     <AddressInput onChangeFn={value => setTempAddress(value)} />
                 }
                 warningStates={[warnings.address, warnings.addressFormat]}
-                warningMessages={["Enter your address", "Wrong or invalid address. Please search and select a recommended address."]}
+                warningMessages={t("addressWarnings", null, {returnObjects: true})}
             />
 
             {/* Prefered Language */}
             <hr />
             <FormInputWrapper
-                title="Prefered language"
+                title={t('preferedLanguage')}
+                id="Prefered Language"
                 component={
                     <>
-                        <Checkbox id="french" name="french" value="french" text="French" callbackFn={handleCheckBox} />
-                        <Checkbox id="english" name="english" value="english" text="English" callbackFn={handleCheckBox} />
+                        <Checkbox id="french" name="french" value="french" text={t('checkboxFrench')} callbackFn={handleCheckBox} />
+                        <Checkbox id="english" name="english" value="english" text={t('checkboxEnglish')} callbackFn={handleCheckBox} />
                     </>
                 }
                 warningStates={[warnings.preferedLanguage]}
-                warningMessages={["Choose at least one language"]}
+                warningMessages={t("preferedLanguageWarnings", null, {returnObjects: true})}
             />
 
             {/* Navigation Buttons */}
             <hr />
             <div className={styles.navBtnsContainer}>
-                <button className={styles.navBtn} onClick={back}>Back</button>
-                <button className={styles.navBtn} onClick={next}>Next</button>
+                <button className={styles.navBtn} onClick={back}>{t('previous')}</button>
+                <button className={styles.navBtn} onClick={next}>{t('next')}</button>
             </div>
         </div>
     )

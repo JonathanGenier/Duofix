@@ -9,14 +9,13 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "google": "^2.1.0",
     "next": "^11.1.2",
-    "next-translate": "^1.0.7",
+    "next-translate": "^1.1.0",
     "react": "17.0.2",
-    "react-bootstrap": "^1.6.1",
+    "react-bootstrap": "^1.6.4",
     "react-dom": "17.0.2",
     "react-google-maps": "^9.4.5",
     "react-places-autocomplete": "^7.3.0"

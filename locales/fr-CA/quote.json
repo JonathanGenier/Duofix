@@ -1,3 +1,18 @@
 {
-    
+    "h1Title": "Vos informations",
+    "fullName": "Nom complet",
+    "fullNameWarnings": "Entrez votre nom complet.",
+    "phone": "Numéro de téléphone",
+    "phoneWarnings": ["Entrez votre numéro de téléphone.", "Numéro de téléphone erroné ou invalide. Veuillez le corriger et réessayer."],
+    "email": "Courriel",
+    "emailWarnings": ["Entrez votre courriel.", "Courriel erronée ou invalide. Veuillez le corriger et réessayer."],
+    "address": "Addresse",
+    "addressWarnings": ["Entrez votre adresse.", "Adresse erronée ou invalide. Veuillez rechercher et sélectionner une adresse recommandée."],
+    "addressPlaceHolder": "Recherchez et sélectionnez votre adresse",
+    "preferedLanguage" : "Langue de préférence",
+    "preferedLanguageWarnings": ["Choisissez au moins une langue."],
+    "checkboxFrench": "Français",
+    "checkboxEnglish": "Anglais",
+    "previous": "Précédent",
+    "next": "Suivant"
 }

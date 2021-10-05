@@ -20,6 +20,10 @@ export default function mobileNavbar() {
     const [menu, setMenu] = useState({
         opened: false
     });
+    
+    const handleOnClick = () => {
+        setMenu({...menu, opened: false})
+    }
 
     const languageToggler = () => {
         switch (router.locale) {
@@ -68,32 +72,32 @@ export default function mobileNavbar() {
                         </div>
                         <div className={styles.menuMiddleContainer}>
                             <Link href={router.locale + "/"}>
-                                <a className={styles.menuBtn}>
+                                <a className={styles.menuBtn} onClick={handleOnClick}>
                                     <span className={"std-ft-md " + styles.menuBtnText}>{t('common:home')}</span>
                                 </a>
                             </Link>
-                            <Link href={router.locale + "/about"}>
+                            <Link href={router.locale + "/about"} onClick={handleOnClick}>
                                 <a className={styles.menuBtn}>
                                     <span className={"std-ft-md " + styles.menuBtnText}>{t('common:about')}</span>
                                 </a>
                             </Link>
                             <Link href={router.locale + "/products"}>
-                                <a className={styles.menuBtn}>
+                                <a className={styles.menuBtn} onClick={handleOnClick}>
                                     <span className={"std-ft-md " + styles.menuBtnText}>{t('common:products')}</span>
                                 </a>
                             </Link>
                             <Link href={router.locale + "/gallery"}>
-                                <a className={styles.menuBtn}>
+                                <a className={styles.menuBtn} onClick={handleOnClick}>
                                     <span className={"std-ft-md " + styles.menuBtnText}>{t('common:gallery')}</span>
                                 </a>
                             </Link>
                             <Link href={router.locale + "/contact"}>
-                                <a className={styles.menuBtn}>
+                                <a className={styles.menuBtn} onClick={handleOnClick}>
                                     <span className={"std-ft-md " + styles.menuBtnText}>{t('common:contact')}</span>
                                 </a>
                             </Link>
                             <Link href={router.locale + "/quote"}>
-                                <a className={styles.menuBtnPromo}>
+                                <a className={styles.menuBtnPromo} onClick={handleOnClick}>
                                     <span className={"std-ft-md " + styles.menuBtnPromoText}>{t('common:quote')}</span>
                                 </a>
                             </Link>

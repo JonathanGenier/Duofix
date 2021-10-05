@@ -22,5 +22,4 @@
 .restrictedContainer {
     display: flex;
     height: calc(100vh - 90px); /* 90px = thickness of the navbar */
-    background-color: green;
 }

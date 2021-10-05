@@ -1,3 +1,18 @@
 {
-    
+    "h1Title": "Your informations",
+    "fullName": "Full name",
+    "fullNameWarnings": "Enter your full name.",
+    "phone": "Phone number",
+    "phoneWarnings": ["Enter your phone number", "Wrong or invalid phone number. Please correct it and try again."],
+    "email": "Email",
+    "emailWarnings": ["Enter your email address", "Wrong or invalid email address. Please correct it and try again."],
+    "address": "Address",
+    "addressWarnings": ["Enter your address", "Wrong or invalid address. Please search and select a recommended address."],
+    "addressPlaceHolder": "Search and select your address",
+    "preferedLanguage" : "Prefered language",
+    "preferedLanguageWarnings": ["Choose at least one language"],
+    "checkboxFrench": "French",
+    "checkboxEnglish": "English",
+    "previous": "Previous",
+    "next": "Next"
 }

@@ -1,6 +1,7 @@
 /*==MODULES===================================================================*/
 import { useState, useEffect } from 'react'
 import PlacesAutocomplete from 'react-places-autocomplete'
+import useTranslation from 'next-translate/useTranslation'
 
 /*==COMPONENTS================================================================*/
 
@@ -10,6 +11,8 @@ import styles from '../styles/components/addressInput.module.css'
 /*============================================================================*/
 
 export default function addressInput({ onChangeFn }) {
+
+    let { t } = useTranslation()
 
     const [tempAddress, setTempAddress] = useState("")
 
@@ -40,7 +43,7 @@ export default function addressInput({ onChangeFn }) {
 
                     <input
                         {...getInputProps({
-                            placeholder: 'Search and select your address'
+                            placeholder: t('quote:addressPlaceHolder')
                         })}
                         className={styles.textInput}
                         type="text"

@@ -37,23 +37,19 @@ export default function layout({ children }) {
 
     return (
         <div className={"main-c"}>
-            {/* Navbar */}
-            {renderNavbar()}
 
             {/* Pages */}
-            {children}
-            
-            {/*<Footer/>*/}
+            <div className={styles.children}>
+                {children}
+            </div>  
+
+            {/* Navbar */}
             {/* Must be rendered after pages */}
-            
-            {/* <div className={styles.navBar}>
-                
+            <div className={styles.navbar}>
+                {renderNavbar()}
             </div>
 
-            
-            <div className={styles.children}>
-
-            </div> */}
+            {/*<Footer/>*/}
         </div>
     )
 }
